@@ -1,10 +1,10 @@
-d<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bootstrap demo</title>
+    <title>TP Laboratorio AWC2</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -15,7 +15,7 @@ d<!doctype html>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">TPLM</a>
 
         <button
           class="navbar-toggler"
@@ -52,12 +52,17 @@ d<!doctype html>
     </nav>
 
     <main class="container mt-4">
-      <h1>Productos</h1>
+      <h1 class="mb-4">Productos</h1>
 
-      <div id="contenerdorProductos" class="row"></div>
+      <!-- Este ID coincide con el index.js del profesor -->
+      <div
+        id="product-list"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+      ></div>
     </main>
 
     <footer class="container mt-4">
+      <hr />
       <p>&copy; 2025 My Website</p>
     </footer>
 
