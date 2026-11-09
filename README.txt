@@ -1,70 +1,39 @@
-LABORATORIO AWC2
-Descripción
-Trabajo Práctico de Laboratorio de Aplicaciones Web Cliente.
+TPLM - Trabajo Práctico de Laboratorio de Aplicaciones Web Cliente
 
-Desarrollo de una aplicación E-Commerce utilizando HTML5, CSS3, Bootstrap 5 y JavaScript, consumiendo una API de productos, implementando carrito de compras, LocalStorage, filtros, búsqueda y formulario de envío.
+Puesta en marcha antes de las clases
+- Instalación de Visual Studio Code.
+- Uso de Live Server para abrir el proyecto localmente.
+- Actualización del repositorio en Git y GitHub.
 
-Tecnologías
-HTML5
-CSS3
-Bootstrap 5
-JavaScript
-Fetch API
-DOM
-LocalStorage
-Git y GitHub
-Integrantes
-Alumno	GitHub	Responsabilidad
-Luis Morel	@TuUsuario	Carrito y LocalStorage
-Integrante 2	@usuario2	Pendiente
-Integrante 3	@usuario3	Pendiente
-Estado del Proyecto
-Sprint 1
-Creación de repositorio
-Estructura inicial del proyecto
-Configuración Bootstrap
-Maquetación inicial
-Sprint 2
-Consumo de API
-Visualización de productos
-Modal de detalle
-Sprint 3
-Carrito de compras
-LocalStorage
-Badge contador
-Sprint 4
-Sidebar del carrito
-Buscador
-Filtro por categorías
-Sprint 5
-Formulario de envío
-Validaciones
-Responsive Design
-Estructura del Proyecto
+Clase 1 - Uso de JavaScript en el proyecto (16/10)
+Introducción a JavaScript para el curso de Laboratorio de Aplicaciones Web Cliente. En el proyecto se trabaja con módulos JavaScript, funciones, consumo de productos y creación de contenido en el DOM.
+Video: https://youtu.be/85bLGBHbWKw
 
-LABORATORIOAWC2
-│
+Clase 2 - Crear modal + LocalStorage (23/10)
+- Creación y uso de una plantilla de modal desde JavaScript.
+- Modal con imagen, descripción, precio U$S, contador de cantidad y botones para cerrar o agregar al carrito.
+- Barra de búsqueda debajo del título Productos.
+- Uso de Google Fonts: Titillium Web.
+- Introducción a LocalStorage con el ejemplo de clase en storage.js. La lógica del carrito se desarrollará en la clase siguiente.
+- Referencia a páginas de diseño web.
+Video: https://youtu.be/wL0jqAxGb9E
+
+Fuentes y herramientas utilizadas
+- Bootstrap Modal: https://getbootstrap.com/docs/5.3/components/modal/
+- Tema de referencia: https://themes.getbootstrap.com/preview/theme_id=60676
+- Google Fonts: https://fonts.google.com/
+- Fake Store API: https://fakestoreapi.com/
+
+Estructura actual
+TPLM
 ├── index.html
-├── css
-│   └── style.css
-├── js
-│   ├── app.js
-│   ├── api.js
-│   ├── cart.js
-│   ├── search.js
-│   ├── categories.js
-│   └── checkout.js
-├── assets
-│   └── img
-└── README.md
-
-Historial de Avance
-22/10/2026
-Se crea repositorio GitHub.
-Se inicializa estructura del proyecto.
-Se asignan tareas a los integrantes.
-Referencias
-https://getbootstrap.com
-https://fakestoreapi.com
-https://sweetalert2.github.io
-https://responsively.app
+├── README.txt
+└── src
+    ├── components
+    │   ├── cards.js
+    │   ├── modal.js
+    │   └── storage.js
+    ├── css
+    │   └── styles.css
+    ├── api.js
+    └── index.js

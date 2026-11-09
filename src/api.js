@@ -1,7 +1,8 @@
 export function getProducts() {
-  let res = fetch("https://fakestoreapi.com/products")
-    .then((response) => response.json())
-    .then((data) => data);
-
-  return res;
+  return fetch("https://fakestoreapi.com/products").then((response) => {
+    if (!response.ok) {
+      throw new Error(`Error HTTP ${response.status}`);
+    }
+    return response.json();
+  });
 }

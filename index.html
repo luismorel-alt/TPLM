@@ -4,7 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TP Laboratorio AWC2</title>
+    <title>TPLM - Productos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -16,58 +23,29 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TPLM</a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"> Home </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Features </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Pricing </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true"> Disabled </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 
-    <main class="container mt-4">
-      <h1 class="mb-4">Productos</h1>
-
-      <!-- Este ID coincide con el index.js del profesor -->
+    <main class="container">
+      <input type="text" name="Search" id="" value="Search" />
       <div
+        class="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-4 mt-5"
         id="product-list"
-        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
       ></div>
-    </main>
 
-    <footer class="container mt-4">
-      <hr />
-      <p>&copy; 2025 My Website</p>
+      <!-- Button trigger modal -->
+    <div><class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+          </div>
+          < class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+    </div> 
+    </main>
+    <footer>
+      <p>&copy;2025 My Website </p>
     </footer>
 
-    <script type="module" src="./src/index.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./src/index.js"></script>
   </body>
 </html>
