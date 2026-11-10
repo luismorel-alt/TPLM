@@ -1,22 +1,33 @@
 export function Modal(prod) {
-  let comtent = document.querySelector("#productModal");
+  let container = document.querySelector("#productModal");
 
   let template = `
-     <div class="modal-dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <h1 class="modal-title fs-5" id="exampleModalLabel">${prod.title}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5">${prod.title}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-          <img src="${p.image}" class="card-img-top" alt="${p.title}">
-          <h5 class="card-title">${p.title}</h5>
-          <p class="card-text">${p.description.substring(0, 80)}...</p>
-      </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="${prod.image}" class="img-fluid" alt="${prod.title}">
+              </div>
+              <div class="col-md-6">
+                <p class="mt-3">${prod.description}</p>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end al"}ign-items-start">
+                <p style="width: 150px;">
+                Precio:<small> U$S ${prod.price}</small></p>
+                <div class="d-flex align-items-center gap-2 mt-3">
+                  <button class="btn btn-dark">Contactar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Agregar a carrito</button>
       </div>
     </div>
   </div>
@@ -24,6 +35,7 @@ export function Modal(prod) {
 
   container.innerHTML = template;
 
-  const bootstramoddal = new boostrap.Modal(coniner);
-  boostrapModal.show();
+  const bootstrapModal = new bootstrap.Modal(container);
+
+  bootstrapModal.show();
 }

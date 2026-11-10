@@ -1,4 +1,4 @@
-import { getProducts } from "./api.js";
+import "./components/cards.js";
 
 let productList = document.querySelector("#product-list");
 console.log(productList);
