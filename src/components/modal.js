@@ -2,7 +2,7 @@ export function Modal(prod) {
   let container = document.querySelector("#productModal");
 
   let template = `
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
           <h1 class="modal-title fs-5">${prod.title}</h1>
@@ -16,7 +16,7 @@ export function Modal(prod) {
               <div class="col-md-6">
                 <p class="mt-3">${prod.description}</p>
               </div>
-              <div class="col-md-12 d-flex justify-content-end al"}ign-items-start">
+              <div class="col-md-12 d-flex justify-content-end align-items-start">
                 <p style="width: 150px;">
                 Precio:<small> U$S ${prod.price}</small></p>
                 <div class="d-flex align-items-center gap-2 mt-3">
@@ -27,15 +27,18 @@ export function Modal(prod) {
           </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Agregar a carrito</button>
+        <button type="button" class="btn btn-dark" id="addToCartBtn-${prod.id}">Agregar a carrito</button>
       </div>
     </div>
   </div>
   `;
 
   container.innerHTML = template;
+  let btnAddToCart = document.querySelector(`#addToCartBtn-${prod.id}`);
+  btnAddToCart.addEventListener("click", () => {
+    console.log(`Producto ${prod.id} agregado al carrito`);
+  });
 
   const bootstrapModal = new bootstrap.Modal(container);
-
   bootstrapModal.show();
 }

@@ -1,4 +1,4 @@
-import "./components/cards.js";
+/*import "./components/cards.js";
 
 let productList = document.querySelector("#product-list");
 console.log(productList);
@@ -22,4 +22,14 @@ getProducts().then((products) => {
   });
 
   productList.innerHTML = template;
-});
+}); */
+/*
+import { RenderCards } from "./components/cards.js";
+import { initLocalStorage } from "./storage/storage.js";
+*/
+
+import { RenderCards } from "./components/cards.js";
+import { initLocalStorage } from "./storage/storage.js";
+
+initLocalStorage();
+RenderCards();
