@@ -10,22 +10,19 @@ export function RenderCards() {
     products.forEach((p) => {
       template += `
         <div class="col">
-          <div class="card justify-content-center align-items-center" style="width: 250px;">
+          <div class="card justify-content-center align-items-center" style="width: 200px;">
             <img
               src="${p.image}"
               class="card-img-top"
               alt="${p.title}"
-              style="width: 250px; height: 250px; object-fit: cover;"
+              style="width: 220px; height: 220px; object-fit: contain;"
             >
 
-            <div class="card-body" style="width: 250px;">
+            <div class="card-body" style="width: 180px;">
               <h5 class="card-title text-truncate">
                 ${p.title}
               </h5>
 
-              <p class="card-text">
-                ${p.description.substring(0, 100)}...
-              </p>
             </div>
 
             <div class="mb-3">
