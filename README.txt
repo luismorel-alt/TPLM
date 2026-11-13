@@ -75,5 +75,22 @@ Se agrega notificaciones mejorar la UX
 Se agrega categorías y se filtra por cada una de ellas. 
 Se muestra el usos de Lighthouse desde la devtools, analizando la pag desde el enfoque de accesibilidad web.
 
+TPLM
+├── .vscode
+├── src
+│   ├── components
+│   │   ├── cards.js
+│   │   ├── contador.js
+│   │   └── modal.js
+│   ├── css
+│   │   └── styles.css
+│   ├── services
+│   │   └── api.js
+│   ├── storage
+│   │   └── storage.js
+│   └── index.js
+├── index.html
+└── README.txt
+
 20/11 Entrega del Tp
 27/11 Recuperatorio
