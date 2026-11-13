@@ -6,6 +6,7 @@ Puesta en marcha antes de las clases
 - Actualización del repositorio en Git y GitHub.
 -https://github.com/luismorel-alt/TPLM
 
+API https://fakestoreapi.com/products
 
 Clase 1 - Uso de JavaScript en el proyecto (16/10)
 Introducción a JavaScript para el curso de Laboratorio de Aplicaciones Web Cliente. En el proyecto se trabaja con módulos JavaScript, funciones, consumo de productos y creación de contenido en el DOM.
@@ -91,6 +92,19 @@ TPLM
 │   └── index.js
 ├── index.html
 └── README.txt
+
+20/11 Entrega del Tp
+27/11 Recuperatorio
+
+13/11
+Clase 5: Formulario
+https://youtu.be/2iVvmhWHP5U
+Trabajar con distintos tipos de inputs: 
+
+Carga de archivos / imágenes (input type="file") 
+Datos de texto (Nombre, Apellido, Dirección y Código Postal) 
+Menús desplegables (input select) 
+Casillas de verificación (checkbox)
 
 20/11 Entrega del Tp
 27/11 Recuperatorio

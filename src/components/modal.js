@@ -1,4 +1,5 @@
 import { saveToLocalStorage } from "../storage/storage.js";
+import { renderCart } from "./cart.js";
 import { Contador, initContador } from "./contador.js";
 
 export function Modal(prod) {
@@ -47,7 +48,10 @@ export function Modal(prod) {
 
     if (qty > 0) {
       saveToLocalStorage({ ...prod, qty });
-      console.log(`Producto ${prod.id} agregado al carrito. Cantidad: ${qty}`);
+      renderCart();
+      const message = document.querySelector("#cart-toast-message");
+      message.textContent = `Se agregaron ${qty} unidad${qty === 1 ? "" : "es"} de ${prod.title}.`;
+      bootstrap.Toast.getOrCreateInstance(document.querySelector("#cart-toast")).show();
     }
   });
   const bootstrapModal = new bootstrap.Modal(container);

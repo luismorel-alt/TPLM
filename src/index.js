@@ -30,6 +30,8 @@ import { initLocalStorage } from "./storage/storage.js";
 
 import { RenderCards } from "./components/cards.js";
 import { initLocalStorage } from "./storage/storage.js";
+import { initCart } from "./components/cart.js";
 
 initLocalStorage();
+initCart();
 RenderCards();
