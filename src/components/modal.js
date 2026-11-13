@@ -1,3 +1,6 @@
+import { saveToLocalStorage } from "../storage/storage.js";
+import { Contador, initContador } from "./contador.js";
+
 export function Modal(prod) {
   let container = document.querySelector("#productModal");
 
@@ -15,30 +18,38 @@ export function Modal(prod) {
               </div>
               <div class="col-md-6">
                 <p class="mt-3">${prod.description}</p>
-              </div>
-              <div class="col-md-12 d-flex justify-content-end align-items-start">
-                <p style="width: 150px;">
-                Precio:<small> U$S ${prod.price}</small></p>
                 <div class="d-flex align-items-center gap-2 mt-3">
                   <button class="btn btn-dark">Contactar</button>
                 </div>
               </div>
             </div>
           </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-dark" id="addToCartBtn-${prod.id}">Agregar a carrito</button>
+      <div class="modal-footer justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center flex-wrap gap-4">
+          <p class="mb-0">Precio: <small>U$S ${prod.price}</small></p>
+          ${Contador()}
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-dark" id="addToCartBtn-${prod.id}">Agregar a carrito</button>
+        </div>
       </div>
     </div>
   </div>
   `;
 
   container.innerHTML = template;
+  initContador();
+
   let btnAddToCart = document.querySelector(`#addToCartBtn-${prod.id}`);
   btnAddToCart.addEventListener("click", () => {
-    console.log(`Producto ${prod.id} agregado al carrito`);
-  });
+    const qty = Number(document.querySelector("#contador").textContent);
 
+    if (qty > 0) {
+      saveToLocalStorage({ ...prod, qty });
+      console.log(`Producto ${prod.id} agregado al carrito. Cantidad: ${qty}`);
+    }
+  });
   const bootstrapModal = new bootstrap.Modal(container);
   bootstrapModal.show();
 }
