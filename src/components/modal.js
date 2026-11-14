@@ -19,9 +19,6 @@ export function Modal(prod) {
               </div>
               <div class="col-md-6">
                 <p class="mt-3">${prod.description}</p>
-                <div class="d-flex align-items-center gap-2 mt-3">
-                  <button class="btn btn-dark">Contactar</button>
-                </div>
               </div>
             </div>
           </div>
@@ -51,7 +48,9 @@ export function Modal(prod) {
       renderCart();
       const message = document.querySelector("#cart-toast-message");
       message.textContent = `Se agregaron ${qty} unidad${qty === 1 ? "" : "es"} de ${prod.title}.`;
-      bootstrap.Toast.getOrCreateInstance(document.querySelector("#cart-toast")).show();
+      bootstrap.Toast.getOrCreateInstance(
+        document.querySelector("#cart-toast"),
+      ).show();
     }
   });
   const bootstrapModal = new bootstrap.Modal(container);

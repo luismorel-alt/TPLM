@@ -93,8 +93,8 @@ TPLM
 ├── index.html
 └── README.txt
 
-20/11 Entrega del Tp
-27/11 Recuperatorio
+https://theretailexec.com/es/gestion-de-plataforma/pagina-carrito-compras/
+
 
 13/11
 Clase 5: Formulario
