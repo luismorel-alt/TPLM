@@ -106,5 +106,30 @@ Datos de texto (Nombre, Apellido, Dirección y Código Postal)
 Menús desplegables (input select) 
 Casillas de verificación (checkbox)
 
+TPLM
+│
+├── .vscode
+│
+├── src
+│   │
+│   ├── components
+│   │   ├── cards.js
+│   │   ├── cart.js
+│   │   ├── contador.js
+│   │   └── modal.js
+│   │
+│   ├── css
+│   │   └── styles.css
+│   │
+│   ├── services
+│   │   └── api.js
+│   │
+│   ├── storage
+│   │   └── storage.js
+│   │
+│   └── index.js
+│
+└── index.html
+
 20/11 Entrega del Tp
 27/11 Recuperatorio

@@ -80,9 +80,20 @@ export function initCart() {
       showCartMessage("Agregá productos antes de finalizar la compra.");
       return;
     }
-    setItemToLocalStorage([]);
-    renderCart();
-    showCartMessage("Compra finalizada. ¡Gracias!");
+    const shippingSection = document.querySelector("#shipping-data-section");
+    const openShippingForm = () => {
+      shippingSection.classList.remove("d-none");
+      showCartMessage("Para continuar, completá los datos de envío y aceptá los términos y condiciones.");
+      shippingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      shippingSection.focus({ preventScroll: true });
+    };
+    const cartPanel = document.querySelector("#offcanvasRight");
+    if (cartPanel.classList.contains("show")) {
+      cartPanel.addEventListener("hidden.bs.offcanvas", openShippingForm, { once: true });
+      bootstrap.Offcanvas.getOrCreateInstance(cartPanel).hide();
+    } else {
+      openShippingForm();
+    }
   });
 
   renderCart();

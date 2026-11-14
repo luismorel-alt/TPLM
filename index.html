@@ -17,7 +17,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./src/css/styles.css" />
   </head>
 
@@ -25,39 +28,240 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TPLM</a>
-        <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Abrir carrito">
-          <i class="bi bi-cart-plus" aria-hidden="true"></i> Carrito <span class="badge text-bg-dark" id="cart-count">0</span>
+        <button
+          class="btn btn-outline-dark"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          aria-label="Abrir carrito"
+        >
+          <i class="bi bi-cart-plus" aria-hidden="true"></i> Carrito
+          <span class="badge text-bg-dark" id="cart-count">0</span>
         </button>
       </div>
     </nav>
 
     <main class="container">
-      <section class="catalog-controls mt-4" aria-label="Buscar y filtrar productos">
+      <section
+        class="catalog-controls mt-4"
+        aria-label="Buscar y filtrar productos"
+      >
         <label class="form-label" for="search-input">Search product</label>
-        <input class="form-control" type="search" name="search" id="search-input" placeholder="Search by name or description" />
-        <div class="d-flex flex-wrap gap-2 mt-3" id="category-filters" aria-label="Filtrar por categoría"></div>
+        <input
+          class="form-control"
+          type="search"
+          name="search"
+          id="search-input"
+          placeholder="Search by name or description"
+        />
+        <div
+          class="d-flex flex-wrap gap-2 mt-3"
+          id="category-filters"
+          aria-label="Filtrar por categoría"
+        ></div>
       </section>
       <div
         class="row row-cols-1 row-cols-md-4 g-4 mt-5"
         id="product-list"
       ></div>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+      <section id="shipping-data-section" class="my-5" aria-labelledby="shipping-form-title" tabindex="-1">
+        <div
+          class="shipping-card border border-3 border-black rounded-2 bg-white shadow-lg p-3 p-md-4"
+        >
+          <div class="d-flex justify-content-center align-items-center">
+            <h2
+              id="shipping-form-title"
+              class="text-center mt-3 mb-4 border border-black border-3 rounded-2 w-50 bg-primary text-white custom-shadow p-2 fs-5"
+            >
+              Datos de envíos
+            </h2>
+          </div>
+          <form class="row g-3 my-3 mx-md-3" id="datos-de-envios">
+            <div class="col-12 mb-3">
+              <label for="formFile" class="form-label">Imagen del comprobante (opcional)</label>
+              <input type="file" class="form-control" id="formFile" name="image" accept="image/*" />
+            </div>
+            <div class="col-md-6">
+              <label for="inputNombre" class="form-label">Nombre *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputNombre"
+                name="inputNombre"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputApellido" class="form-label">Apellido *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputApellido"
+                name="inputApellido"
+                autocomplete="family-name"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Dirección *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress"
+                name="inputAddress"
+                placeholder="Av. Corrientes 1234"
+                autocomplete="street-address"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Dirección 2</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress2"
+                name="inputAddress2"
+                placeholder="Departamento, estudio o piso"
+                autocomplete="address-line2"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Ciudad *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCity"
+                name="inputCity"
+                autocomplete="address-level2"
+                required
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="inputPais" class="form-label">País *</label>
+              <select
+                id="inputPais"
+                name="inputPais"
+                class="form-select"
+                autocomplete="country-name"
+                required
+              >
+                <option selected value="">Seleccioná tu país...</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Perú">Perú</option>
+                <option value="Chile">Chile</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Colombia">Colombia</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Cód. Postal *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputZip"
+                name="inputZip"
+                autocomplete="postal-code"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="gridCheck"
+                  name="gridCheck"
+                  required
+                />
+                <label class="form-check-label" for="gridCheck"
+                  >Acepto términos y condiciones *</label
+                >
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary w-75 custom-shadow">
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border border-3 border-dark shadow-lg">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="exampleModalLabel">Confirmación de envío</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <img id="preview" class="shipping-image-preview d-none mb-3" alt="Imagen adjunta al formulario" />
+              <p id="modalMessage" class="mb-0 text-break"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary custom-shadow" id="btn-close-modal" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
         <div class="offcanvas-header">
-          <h2 class="offcanvas-title fs-5" id="offcanvasRightLabel">Lista de compras</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+          <h2 class="offcanvas-title fs-5" id="offcanvasRightLabel">
+            Lista de compras
+          </h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Cerrar carrito"
+          ></button>
         </div>
         <div class="offcanvas-body" id="cart-items" aria-live="polite"></div>
         <div class="offcanvas-footer border-top p-3">
-          <p class="d-flex justify-content-between mb-3"><strong>Total</strong><strong id="cart-total">U$S 0.00</strong></p>
+          <p class="d-flex justify-content-between mb-3">
+            <strong>Total</strong><strong id="cart-total">U$S 0.00</strong>
+          </p>
           <div class="d-flex justify-content-center gap-2">
-            <button class="btn btn-dark" id="checkout-btn" type="button">Finalizar compra</button>
-            <button class="btn btn-outline-secondary" id="clear-cart-btn" type="button">Vaciar carrito</button>
+            <button class="btn btn-dark" id="checkout-btn" type="button">
+              Finalizar compra
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              id="clear-cart-btn"
+              type="button"
+            >
+              Vaciar carrito
+            </button>
           </div>
         </div>
       </div>
       <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="cart-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
-          <div class="toast-header"><strong class="me-auto">Carrito</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button></div>
+        <div
+          id="cart-toast"
+          class="toast"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Carrito</strong
+            ><button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Cerrar"
+            ></button>
+          </div>
           <div class="toast-body" id="cart-toast-message"></div>
         </div>
       </div>
@@ -72,7 +276,9 @@
       ></div>
     </main>
     <footer class="text-center bg-dark text-white py-3">
-      <p class="m-0">TP E-Commerce | Laboratorio de Aplicaciones Web Cliente | Luis Morel</p>
+      <p class="m-0">
+        TP E-Commerce | Laboratorio de Aplicaciones Web Cliente | Luis Morel
+      </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
